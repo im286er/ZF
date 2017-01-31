@@ -42,11 +42,11 @@ class ZF_String {
         if (is_array($var)) {
             $newArray = array();
             foreach ($var as $key => $value) {
-                $newArray[$key] = self::clean(self::addslashes($value));
+                $newArray[$key] = self::clean($value);
             }
             return $newArray;
         } else {
-            return strip_tags($var);
+            return strip_tags(self::addslashes($var));
         }
     }
 
